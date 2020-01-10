@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import '../../styles/main.scss'
 
 class Header extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <p className="customClass"> I am styled P element</p>
+                <p className="customClassFromFile"> I am styled P element</p>
                 <Link href='/'>
                     <a>Home</a>
                 </Link>
@@ -19,7 +22,19 @@ class Header extends React.Component {
                 </Link> 
                 <Link href='/cv'>
                     <a>CV</a>
-                </Link> 
+                </Link>
+                <style jsx>
+                    {`
+                    a {
+                        font-size: 20px;
+                    };
+
+                    .customClass {
+                        color: red;
+                    }
+                    `}
+                    
+                </style>
             </React.Fragment>
         )
     }
