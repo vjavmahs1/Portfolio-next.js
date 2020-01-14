@@ -2091,35 +2091,99 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/kim/Desktop/new-portfolio/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
- //Functional Component
 
-/*
-const Index = () => (
-    <div>
-        <p>Hello Next.js</p>
-    </div>
-)
-*/
-//Class Component
+ //Class Component
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  static async getInitialProps() {
+    let userData = {};
+
+    try {
+      const response = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://jsonplaceholder.typicode.com/todos/1');
+      userData = response.data;
+      console.log(response.data);
+    } catch (err) {
+      console.error(err);
+    }
+
+    return {
+      initialData: [1, 2, 3, 4],
+      userData
+    };
+  }
+
+  constructor() {
+    super();
+    this.state = {
+      title: 'I am Index Page'
+    };
+    console.log('constructor');
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
+  updateTitle() {
+    this.setState({
+      title: 'I am updated'
+    });
+  }
+
   render() {
+    console.log('render');
+    const {
+      userData,
+      initialData
+    } = this.props;
+    const {
+      title
+    } = this.state;
     return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 56
       },
       __self: this
     }, __jsx("h1", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 57
       },
       __self: this
-    }, "I am  Index page from class Component"));
+    }, "I am  Index page from class Component"), __jsx("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, title), __jsx("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, userData.title), __jsx("button", {
+      onClick: () => this.updateTitle(),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, " Change Title "));
   }
 
 }
@@ -2148,6 +2212,17 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 module.exports = __webpack_require__(/*! /Users/kim/Desktop/new-portfolio/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
