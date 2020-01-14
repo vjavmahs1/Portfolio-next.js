@@ -25881,7 +25881,7 @@ module.exports = routes() // ----   ----      -----
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fkim%2FDesktop%2Fnew-portfolio%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -25904,5 +25904,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
