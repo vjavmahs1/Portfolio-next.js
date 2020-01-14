@@ -145,111 +145,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../styles/main.scss */ "./styles/main.scss");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/kim/Desktop/new-portfolio/components/shared/Header.js";
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../styles/main.scss */ "./styles/main.scss");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
+
 class Header extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "jsx-667793958" + " " + "customClass",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    }, " I am styled P element"), __jsx("p", {
-      className: "jsx-667793958" + " " + "customClassFromFile",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      },
-      __self: this
-    }, " I am styled P element"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      },
-      __self: this
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: "/"
     }, __jsx("a", {
-      className: "jsx-667793958",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
+      className: "jsx-667793958"
     }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/about",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
+      href: "/about"
     }, __jsx("a", {
-      className: "jsx-667793958",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
+      className: "jsx-667793958"
     }, "About")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/portfolios",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: this
+      href: "/portfolios"
     }, __jsx("a", {
-      className: "jsx-667793958",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
+      className: "jsx-667793958"
     }, "Portfolio")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/blogs",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
+      href: "/blogs"
     }, __jsx("a", {
-      className: "jsx-667793958",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
+      className: "jsx-667793958"
     }, "Blog")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/cv",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
+      href: "/cv"
     }, __jsx("a", {
-      className: "jsx-667793958",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
+      className: "jsx-667793958"
     }, "CV")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-      id: "667793958",
-      __self: this
-    }, "a.jsx-667793958{font-size:20px;}.customClass.jsx-667793958{color:red;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9raW0vRGVza3RvcC9uZXctcG9ydGZvbGlvL2NvbXBvbmVudHMvc2hhcmVkL0hlYWRlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEwQnFCLEFBR3dDLEFBSUwsVUFDZCxLQUpBIiwiZmlsZSI6Ii9Vc2Vycy9raW0vRGVza3RvcC9uZXctcG9ydGZvbGlvL2NvbXBvbmVudHMvc2hhcmVkL0hlYWRlci5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCAnLi4vLi4vc3R5bGVzL21haW4uc2NzcydcblxuY2xhc3MgSGVhZGVyIGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcbiAgICByZW5kZXIoKSB7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8UmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwiY3VzdG9tQ2xhc3NcIj4gSSBhbSBzdHlsZWQgUCBlbGVtZW50PC9wPlxuICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImN1c3RvbUNsYXNzRnJvbUZpbGVcIj4gSSBhbSBzdHlsZWQgUCBlbGVtZW50PC9wPlxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy8nPlxuICAgICAgICAgICAgICAgICAgICA8YT5Ib21lPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgICAgICA8TGluayBocmVmPScvYWJvdXQnPlxuICAgICAgICAgICAgICAgICAgICA8YT5BYm91dDwvYT5cbiAgICAgICAgICAgICAgICA8L0xpbms+IFxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy9wb3J0Zm9saW9zJz5cbiAgICAgICAgICAgICAgICAgICAgPGE+UG9ydGZvbGlvPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz4gXG4gICAgICAgICAgICAgICAgPExpbmsgaHJlZj0nL2Jsb2dzJz5cbiAgICAgICAgICAgICAgICAgICAgPGE+QmxvZzwvYT5cbiAgICAgICAgICAgICAgICA8L0xpbms+IFxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy9jdic+XG4gICAgICAgICAgICAgICAgICAgIDxhPkNWPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgICAgICA8c3R5bGUganN4PlxuICAgICAgICAgICAgICAgICAgICB7YFxuICAgICAgICAgICAgICAgICAgICBhIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcbiAgICAgICAgICAgICAgICAgICAgfTtcblxuICAgICAgICAgICAgICAgICAgICAuY3VzdG9tQ2xhc3Mge1xuICAgICAgICAgICAgICAgICAgICAgICAgY29sb3I6IHJlZDtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBgfVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICA8L3N0eWxlPlxuICAgICAgICAgICAgPC9SZWFjdC5GcmFnbWVudD5cbiAgICAgICAgKVxuICAgIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgSGVhZGVyOyJdfQ== */\n/*@ sourceURL=/Users/kim/Desktop/new-portfolio/components/shared/Header.js */"));
+      id: "667793958"
+    }, "a.jsx-667793958{font-size:20px;}.customClass.jsx-667793958{color:red;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9raW0vRGVza3RvcC9uZXctcG9ydGZvbGlvL2NvbXBvbmVudHMvc2hhcmVkL0hlYWRlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE0QnFCLEFBR3dDLEFBSUwsVUFDZCxLQUpBIiwiZmlsZSI6Ii9Vc2Vycy9raW0vRGVza3RvcC9uZXctcG9ydGZvbGlvL2NvbXBvbmVudHMvc2hhcmVkL0hlYWRlci5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCB7TGluayBhcyBOZXN0TGlua30gZnJvbSAnLi4vLi4vcm91dGVzJ1xuaW1wb3J0ICcuLi8uLi9zdHlsZXMvbWFpbi5zY3NzJ1xuXG5jbGFzcyBIZWFkZXIgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuICAgIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxSZWFjdC5GcmFnbWVudD5cblxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy8nPlxuICAgICAgICAgICAgICAgICAgICA8YT5Ib21lPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgICAgICA8TGluayBocmVmPScvYWJvdXQnPlxuICAgICAgICAgICAgICAgICAgICA8YT5BYm91dDwvYT5cbiAgICAgICAgICAgICAgICA8L0xpbms+IFxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy9wb3J0Zm9saW9zJz5cbiAgICAgICAgICAgICAgICAgICAgPGE+UG9ydGZvbGlvPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz4gXG4gICAgICAgICAgICAgICAgPExpbmsgaHJlZj0nL2Jsb2dzJz5cbiAgICAgICAgICAgICAgICAgICAgPGE+QmxvZzwvYT5cbiAgICAgICAgICAgICAgICA8L0xpbms+IFxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy9jdic+XG4gICAgICAgICAgICAgICAgICAgIDxhPkNWPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz5cblxuXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD5cbiAgICAgICAgICAgICAgICAgICAge2BcbiAgICAgICAgICAgICAgICAgICAgYSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgICAgICAgICAgICAgICAgIH07XG5cbiAgICAgICAgICAgICAgICAgICAgLmN1c3RvbUNsYXNzIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yOiByZWQ7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgYH1cbiAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgPC9zdHlsZT5cbiAgICAgICAgICAgIDwvUmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgIClcbiAgICB9XG59XG5cbmV4cG9ydCBkZWZhdWx0IEhlYWRlcjsiXX0= */\n/*@ sourceURL=/Users/kim/Desktop/new-portfolio/components/shared/Header.js */"));
   }
 
 }
@@ -515,6 +446,17 @@ function _typeof(obj) {
 }
 
 module.exports = _typeof;
+
+/***/ }),
+
+/***/ "./node_modules/bootstrap/dist/css/bootstrap.min.css":
+/*!***********************************************************!*\
+  !*** ./node_modules/bootstrap/dist/css/bootstrap.min.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -2091,104 +2033,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/kim/Desktop/new-portfolio/pages/index.js";
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
  //Class Component
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  static async getInitialProps() {
-    let userData = {};
-
-    try {
-      const response = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://jsonplaceholder.typicode.com/todos/1');
-      userData = response.data;
-      console.log(response.data);
-    } catch (err) {
-      console.error(err);
-    }
-
-    return {
-      initialData: [1, 2, 3, 4],
-      userData
-    };
-  }
-
-  constructor() {
-    super();
-    this.state = {
-      title: 'I am Index Page'
-    };
-    console.log('constructor');
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
-
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
-
-  updateTitle() {
-    this.setState({
-      title: 'I am updated'
-    });
-  }
-
   render() {
     console.log('render');
-    const {
-      userData,
-      initialData
-    } = this.props;
-    const {
-      title
-    } = this.state;
-    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
-    }, __jsx("h1", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
-    }, "I am  Index page from class Component"), __jsx("h2", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, title), __jsx("h2", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }, userData.title), __jsx("button", {
-      onClick: () => this.updateTitle(),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61
-      },
-      __self: this
-    }, " Change Title "));
+    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], null, __jsx("div", {
+      className: "container"
+    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      color: "danger"
+    }, "danger!")));
   }
 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./routes.js":
+/*!*******************!*\
+  !*** ./routes.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const routes = __webpack_require__(/*! next-routes */ "next-routes"); // Name   Page      Pattern
+
+
+module.exports = routes() // ----   ----      -----
+.add('test', '/test/:id'); // blog   blog      /blog/:slug
 
 /***/ }),
 
@@ -2212,17 +2094,6 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 module.exports = __webpack_require__(/*! /Users/kim/Desktop/new-portfolio/pages/index.js */"./pages/index.js");
 
-
-/***/ }),
-
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
 
 /***/ }),
 
@@ -2336,6 +2207,17 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
+/***/ "next-routes":
+/*!******************************!*\
+  !*** external "next-routes" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-routes");
+
+/***/ }),
+
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2377,6 +2259,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "reactstrap":
+/*!*****************************!*\
+  !*** external "reactstrap" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("reactstrap");
 
 /***/ }),
 
