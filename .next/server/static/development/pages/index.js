@@ -105,25 +105,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _shared_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/Header */ "./components/shared/Header.js");
-var _jsxFileName = "/Users/kim/Desktop/new-portfolio/components/layouts/BaseLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 const BaseLayout = props => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: undefined
-  }, __jsx(_shared_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  }), props.children);
+  const {
+    className,
+    children
+  } = props;
+  return __jsx("div", {
+    className: "layout-container"
+  }, __jsx(_shared_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx("main", {
+    className: `cover ${className}`
+  }, __jsx("div", {
+    className: "wrapper"
+  }, children)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (BaseLayout);
@@ -446,17 +443,6 @@ function _typeof(obj) {
 }
 
 module.exports = _typeof;
-
-/***/ }),
-
-/***/ "./node_modules/bootstrap/dist/css/bootstrap.min.css":
-/*!***********************************************************!*\
-  !*** ./node_modules/bootstrap/dist/css/bootstrap.min.css ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
 
 /***/ }),
 
@@ -2035,8 +2021,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layouts/BaseLayout */ "./components/layouts/BaseLayout.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-typed */ "react-typed");
+/* harmony import */ var react_typed__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_typed__WEBPACK_IMPORTED_MODULE_3__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2044,13 +2030,54 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  //Class Component
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.roles = ['Developer', 'Tech Lover', 'Team Player', 'React.js'];
+  }
+
   render() {
     console.log('render');
-    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], null, __jsx("div", {
-      className: "container"
-    }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-      color: "danger"
-    }, "danger!")));
+    return __jsx(_components_layouts_BaseLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      className: "cover"
+    }, __jsx("div", {
+      className: "main-section"
+    }, __jsx("div", {
+      className: "background-image"
+    }, __jsx("img", {
+      src: "/static/images/background-index.png"
+    })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+      md: "6"
+    }, __jsx("div", {
+      className: "hero-section"
+    }, __jsx("div", {
+      className: `flipper`
+    }, __jsx("div", {
+      className: "back"
+    }, __jsx("div", {
+      className: "hero-section-content"
+    }, __jsx("h2", null, " Full Stack Web Developer "), __jsx("div", {
+      className: "hero-section-content-intro"
+    }, "Have a look at my portfolio and job history.")), __jsx("img", {
+      className: "image",
+      src: "/static/images/section-1.png"
+    }), __jsx("div", {
+      className: "shadow-custom"
+    }, __jsx("div", {
+      className: "shadow-inner"
+    }, " ")))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+      md: "6",
+      className: "hero-welcome-wrapper"
+    }, __jsx("div", {
+      className: "hero-welcome-text"
+    }, __jsx("h1", null, "Welcome to the portfolio website of Filip Jerga. Get informed, collaborate and discover projects I was working on through the years!")), __jsx(react_typed__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      strings: this.roles,
+      typeSpeed: 60,
+      backSpeed: 60,
+      className: "self-typed",
+      loop: true
+    }), __jsx("div", {
+      className: "hero-welcome-bio"
+    }, __jsx("h1", null, "Let's take a look on my work.")))))));
   }
 
 }
@@ -2259,6 +2286,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-typed":
+/*!******************************!*\
+  !*** external "react-typed" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-typed");
 
 /***/ }),
 

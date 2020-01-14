@@ -13,7 +13,7 @@ app.prepare()
   server.get('/portfolio/:id', (req, res) => {
       console.log('called');
       
-      const actualPage = '/portfolio';
+      const actualPage = '/portfolio'; 
       const queryParams = {id: req.params.id}
       app.render(req, res, actualPage, queryParams)
   })

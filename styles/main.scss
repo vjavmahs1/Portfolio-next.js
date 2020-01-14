@@ -1,9 +1,17 @@
 @import './shared/fonts';
 
+//Pages
+@import './index.scss';
+
+
 html, body {
     font-family: 'Montserrat', 'Helvetica' !important;
 }
-.customClassFromFile {
-    color: blue;
 
+.self-typed {
+    font-size: 31px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
 }
+  
