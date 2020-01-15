@@ -136,53 +136,127 @@ const BaseLayout = props => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../styles/main.scss */ "./styles/main.scss");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_4__);
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+/* import React from 'react'
+import {Link as NestLink} from '../../routes'
+import '../../styles/main.scss'
+
+class Header extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+
+                <Link href='/'>
+                    <a>Home</a>
+                </Link>
+                <Link href='/about'>
+                    <a>About</a>
+                </Link> 
+                <Link href='/portfolios'>
+                    <a>Portfolio</a>
+                </Link> 
+                <Link href='/blogs'>
+                    <a>Blog</a>
+                </Link> 
+                <Link href='/cv'>
+                    <a>CV</a>
+                </Link>
 
 
+                <style jsx>
+                    {`
+                    a {
+                        font-size: 20px;
+                    };
 
-
-
-class Header extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/"
-    }, __jsx("a", {
-      className: "jsx-667793958"
-    }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/about"
-    }, __jsx("a", {
-      className: "jsx-667793958"
-    }, "About")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/portfolios"
-    }, __jsx("a", {
-      className: "jsx-667793958"
-    }, "Portfolio")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/blogs"
-    }, __jsx("a", {
-      className: "jsx-667793958"
-    }, "Blog")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/cv"
-    }, __jsx("a", {
-      className: "jsx-667793958"
-    }, "CV")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-      id: "667793958"
-    }, "a.jsx-667793958{font-size:20px;}.customClass.jsx-667793958{color:red;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9raW0vRGVza3RvcC9uZXctcG9ydGZvbGlvL2NvbXBvbmVudHMvc2hhcmVkL0hlYWRlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE0QnFCLEFBR3dDLEFBSUwsVUFDZCxLQUpBIiwiZmlsZSI6Ii9Vc2Vycy9raW0vRGVza3RvcC9uZXctcG9ydGZvbGlvL2NvbXBvbmVudHMvc2hhcmVkL0hlYWRlci5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCB7TGluayBhcyBOZXN0TGlua30gZnJvbSAnLi4vLi4vcm91dGVzJ1xuaW1wb3J0ICcuLi8uLi9zdHlsZXMvbWFpbi5zY3NzJ1xuXG5jbGFzcyBIZWFkZXIgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuICAgIHJlbmRlcigpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxSZWFjdC5GcmFnbWVudD5cblxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy8nPlxuICAgICAgICAgICAgICAgICAgICA8YT5Ib21lPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgICAgICA8TGluayBocmVmPScvYWJvdXQnPlxuICAgICAgICAgICAgICAgICAgICA8YT5BYm91dDwvYT5cbiAgICAgICAgICAgICAgICA8L0xpbms+IFxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy9wb3J0Zm9saW9zJz5cbiAgICAgICAgICAgICAgICAgICAgPGE+UG9ydGZvbGlvPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz4gXG4gICAgICAgICAgICAgICAgPExpbmsgaHJlZj0nL2Jsb2dzJz5cbiAgICAgICAgICAgICAgICAgICAgPGE+QmxvZzwvYT5cbiAgICAgICAgICAgICAgICA8L0xpbms+IFxuICAgICAgICAgICAgICAgIDxMaW5rIGhyZWY9Jy9jdic+XG4gICAgICAgICAgICAgICAgICAgIDxhPkNWPC9hPlxuICAgICAgICAgICAgICAgIDwvTGluaz5cblxuXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD5cbiAgICAgICAgICAgICAgICAgICAge2BcbiAgICAgICAgICAgICAgICAgICAgYSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgICAgICAgICAgICAgICAgIH07XG5cbiAgICAgICAgICAgICAgICAgICAgLmN1c3RvbUNsYXNzIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yOiByZWQ7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgYH1cbiAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgPC9zdHlsZT5cbiAgICAgICAgICAgIDwvUmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgIClcbiAgICB9XG59XG5cbmV4cG9ydCBkZWZhdWx0IEhlYWRlcjsiXX0= */\n/*@ sourceURL=/Users/kim/Desktop/new-portfolio/components/shared/Header.js */"));
-  }
-
+                    .customClass {
+                        color: red;
+                    }
+                    `}
+                    
+                </style>
+            </React.Fragment>
+        )
+    }
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Header);
+export default Header; */
+
+
+
+
+const BsNavLink = props => {
+  const {
+    route,
+    title
+  } = props;
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: route
+  }, __jsx("a", {
+    className: "nav-link port-navbar-link"
+  }, title));
+};
+
+const Example = props => {
+  const {
+    0: isOpen,
+    1: setIsOpen
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  return __jsx("div", null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"], {
+    className: "port-navbar port-default absolute",
+    color: "transparent",
+    dark: true,
+    expand: "md"
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavbarBrand"], {
+    className: "port-navbar-brand",
+    href: "/"
+  }, "Seugnjin Kim"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavbarToggler"], {
+    onClick: toggle
+  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Collapse"], {
+    isOpen: isOpen,
+    navbar: true
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
+    className: "ml-auto",
+    navbar: true
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], {
+    className: "port-navbar-item"
+  }, __jsx(BsNavLink, {
+    route: "/",
+    title: "Home"
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], {
+    className: "port-navbar-item"
+  }, __jsx(BsNavLink, {
+    route: "/about",
+    title: "About"
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], {
+    className: "port-navbar-item"
+  }, __jsx(BsNavLink, {
+    route: "/portfolios",
+    title: "Portfolio"
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], {
+    className: "port-navbar-item"
+  }, __jsx(BsNavLink, {
+    route: "/blogs",
+    title: "Blog"
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], {
+    className: "port-navbar-item"
+  }, __jsx(BsNavLink, {
+    route: "/cv",
+    title: "CV"
+  }))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Example);
 
 /***/ }),
 
@@ -2086,32 +2160,6 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ "./routes.js":
-/*!*******************!*\
-  !*** ./routes.js ***!
-  \*******************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-const routes = __webpack_require__(/*! next-routes */ "next-routes"); // Name   Page      Pattern
-
-
-module.exports = routes() // ----   ----      -----
-.add('test', '/test/:id'); // blog   blog      /blog/:slug
-
-/***/ }),
-
-/***/ "./styles/main.scss":
-/*!**************************!*\
-  !*** ./styles/main.scss ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
@@ -2234,17 +2282,6 @@ module.exports = require("core-js/library/fn/weak-map");
 
 /***/ }),
 
-/***/ "next-routes":
-/*!******************************!*\
-  !*** external "next-routes" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next-routes");
-
-/***/ }),
-
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2308,17 +2345,6 @@ module.exports = require("react-typed");
 /***/ (function(module, exports) {
 
 module.exports = require("reactstrap");
-
-/***/ }),
-
-/***/ "styled-jsx/style":
-/*!***********************************!*\
-  !*** external "styled-jsx/style" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("styled-jsx/style");
 
 /***/ }),
 
