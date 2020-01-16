@@ -33,7 +33,6 @@ class Auth0 {
     }
  
     setSession(authResult) {
-        debugger
 
         // Save tokens!!!
         const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
@@ -62,7 +61,10 @@ class Auth0 {
 
     isAuthenticated() {
         const expiresAt = Cookies.getJSON('expiresAt')
-        return new Date().getTime = expiresAt
+        
+        console.log(new Date().getTime() < expiresAt);
+    
+        return new Date().getTime() < expiresAt
     }
 }
 

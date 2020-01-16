@@ -14,7 +14,6 @@ class Index extends React.Component {
     }
 
     render() {
-        console.log('render');
         return (
             <BaseLayout className="cover">
             <div className="main-section">
@@ -51,8 +50,8 @@ class Index extends React.Component {
                     </div>
                     <Typed
                         strings={this.roles}
-                            typeSpeed={70}
-                            backSpeed={70}
+                            typeSpeed={60}
+                            backSpeed={60}
                             className="self-typed"
                             loop >
                     </Typed>
