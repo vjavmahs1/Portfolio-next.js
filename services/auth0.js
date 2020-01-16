@@ -66,6 +66,34 @@ class Auth0 {
     
         return new Date().getTime() < expiresAt
     }
+
+    clientAuth() {
+        return this.isAuthenticated();
+    }
+
+    serverAuth(req){
+        if (req.headers.cookie) {
+          // const expirestAtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('expiresAt='));
+     
+     
+          // if (!expirestAtCookie) { return undefined};
+          // const expiresAt = expirestAtCookie.split('=')[1];
+     
+          const cookies = req.headers.cookie;
+          console.log(cookies);
+          const splitedCookies = cookies.split(';');
+          console.log(splitedCookies);
+          const expirestAtCookie = splitedCookies.find(c => c.trim().startsWith('expiresAt='));
+          console.log(expirestAtCookie);
+          if (!expirestAtCookie) { return undefined};
+          const expiresAtArray = expirestAtCookie.split('=');
+          console.log(expiresAtArray);
+          const expiresAt = expiresAtArray[1];
+          console.log(expiresAt)
+     
+          return new Date().getTime() < expiresAt;
+        }
+      }
 }
 
 const auth0Client = new Auth0();

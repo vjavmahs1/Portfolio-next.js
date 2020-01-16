@@ -36,53 +36,70 @@ const Logout = () => {
     )
 }
 
-const Example = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+export default class Header extends React.Component {
+  constructor(props) {
+    super(props)
 
-  const toggle = () => setIsOpen(!isOpen);
+    this.toggle = this.toggle.bind(this)
+    this.state = {
+      isOpen: false
+    }
+  }
 
-  return (
-    <div>
-      <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
-        <NavbarBrand className="port-navbar-brand" href="/">Seugnjin Kim</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem className="port-navbar-item">
-              <BsNavLink route = "/" title="Home"/>
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <BsNavLink route = "/about" title="About"/>
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <BsNavLink route = "/portfolios" title="Portfolio"/>
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <BsNavLink route = "/blogs" title="Blog"/>
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <BsNavLink route = "/cv" title="CV"/>
-            </NavItem>
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
-            { !auth0.isAuthenticated() ?
-                 (
-                <NavItem className="port-navbar-item">
-                <Login/>
-                </NavItem>
-                ):
-                (
-                <NavItem className="port-navbar-item">
-                <Logout/>
-                </NavItem>
-                )
-            }
+  render() {
+    const {isAuthenticated} = this.props
+    console.log(this.props);
+    
 
+    return (
+      <div>
+        <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+          <NavbarBrand className="port-navbar-brand" href="/">Seugnjin Kim</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route = "/" title="Home"/>
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route = "/about" title="About"/>
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route = "/portfolios" title="Portfolio"/>
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route = "/blogs" title="Blog"/>
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route = "/cv" title="CV"/>
+              </NavItem>
+  
+              { !isAuthenticated ?
+                   (
+                  <NavItem className="port-navbar-item">
+                  <Login/>
+                  </NavItem>
+                  ):
+                  (
+                  <NavItem className="port-navbar-item">
+                  <Logout/>
+                  </NavItem>
+                  )
+              }
+  
+  
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
 
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
+  }
 }
 
-export default Example;

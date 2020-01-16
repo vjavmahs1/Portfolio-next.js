@@ -1,19 +1,34 @@
+import React from 'react';
+import App, { Container } from 'next/app'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.scss'
-function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
+import auth0 from '../services/auth0'
+
+export default class MyApp extends App {
+
+  static async getInitialProps({ Component, router , ctx}) {
+    let pageProps = {};
+
+    
+    const isAuthenticated = process.browser ? auth0.clientAuth() : auth0.serverAuth(ctx.req);
+
+    const auth = {isAuthenticated}
+
+    if(Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+    return {pageProps, auth}
+
+
   }
-  
-  // Only uncomment this method if you have blocking data requirements for
-  // every single page in your application. This disables the ability to
-  // perform automatic static optimization, causing every page in your app to
-  // be server-side rendered.
-  //
-  // MyApp.getInitialProps = async (appContext) => {
-  //   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  //   const appProps = await App.getInitialProps(appContext);
-  //
-  //   return { ...appProps }
-  // }
-  
-  export default MyApp
+
+  render() {
+    const { Component, pageProps, auth} = this.props
+
+    return (
+      <Container>
+        <Component {...pageProps} auth={auth}/>
+      </Container>
+    )
+  }
+}
