@@ -51,8 +51,8 @@ class Index extends React.Component {
                     </div>
                     <Typed
                         strings={this.roles}
-                            typeSpeed={60}
-                            backSpeed={60}
+                            typeSpeed={70}
+                            backSpeed={70}
                             className="self-typed"
                             loop >
                     </Typed>

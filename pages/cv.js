@@ -9,9 +9,10 @@ class CV extends React.Component {
         return (
             <BaseLayout>
                 <BasePage>
-                    <h1>I am CV page</h1>
+                <h1>I am CV page</h1>
 
                 </BasePage>
+
             </BaseLayout>
         )
     }

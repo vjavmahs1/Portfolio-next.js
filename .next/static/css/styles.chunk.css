@@ -152,5 +152,8 @@ html, body {
 .base-page {
   padding-top: 150px; }
 
+.clickable {
+  cursor: pointer; }
+
 
 /*# sourceMappingURL=styles.chunk.css.map*/

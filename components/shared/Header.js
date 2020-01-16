@@ -1,47 +1,4 @@
-/* import React from 'react'
-import {Link as NestLink} from '../../routes'
-import '../../styles/main.scss'
 
-class Header extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
-
-                <Link href='/'>
-                    <a>Home</a>
-                </Link>
-                <Link href='/about'>
-                    <a>About</a>
-                </Link> 
-                <Link href='/portfolios'>
-                    <a>Portfolio</a>
-                </Link> 
-                <Link href='/blogs'>
-                    <a>Blog</a>
-                </Link> 
-                <Link href='/cv'>
-                    <a>CV</a>
-                </Link>
-
-
-                <style jsx>
-                    {`
-                    a {
-                        font-size: 20px;
-                    };
-
-                    .customClass {
-                        color: red;
-                    }
-                    `}
-                    
-                </style>
-            </React.Fragment>
-        )
-    }
-}
-
-export default Header; */
 
 import React, { useState } from 'react';
 import {
@@ -54,6 +11,7 @@ import {
   NavLink
 } from 'reactstrap';
 import Link from 'next/link'
+import auth0 from '../../services/auth0';
 
 
 const BsNavLink = (props) => {
@@ -64,6 +22,18 @@ const BsNavLink = (props) => {
         </Link>
 
     ) 
+}
+
+const Login = () => {
+    return (
+        <span onClick = {auth0.login} className="nav-link port-navbar-link">Login</span>
+    )
+}
+
+const Logout = () => {
+    return (
+        <span className="nav-link port-navbar-link">Logout</span>
+    )
 }
 
 const Example = (props) => {
@@ -92,6 +62,12 @@ const Example = (props) => {
             </NavItem>
             <NavItem className="port-navbar-item">
               <BsNavLink route = "/cv" title="CV"/>
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <Login/>
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <Logout/>
             </NavItem>
           </Nav>
         </Collapse>
