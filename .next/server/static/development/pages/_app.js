@@ -1877,9 +1877,10 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
     ctx
   }) {
     let pageProps = {};
-    const isAuthenticated = false ? undefined : _services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].serverAuth(ctx.req);
+    const user = false ? undefined : await _services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].serverAuth(ctx.req);
     const auth = {
-      isAuthenticated
+      user,
+      isAuthenticated: !!user
     };
 
     if (Component.getInitialProps) {
@@ -1924,6 +1925,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie */ "js-cookie");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
+/* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
@@ -1941,7 +1948,6 @@ class Auth0 {
     this.login = this.login.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.logout = this.logout.bind(this);
-    this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   handleAuthentication() {
@@ -1981,39 +1987,76 @@ class Auth0 {
     });
   }
 
-  isAuthenticated() {
-    const expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.getJSON('expiresAt');
-    console.log(new Date().getTime() < expiresAt);
-    return new Date().getTime() < expiresAt;
+  async getJWKS() {
+    const res = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://dev-35qetqbm.auth0.com/.well-known/jwks.json');
+    const jwks = res.data;
+    return jwks;
   }
 
-  clientAuth() {
-    return this.isAuthenticated();
+  async verifyToken(token) {
+    if (token) {
+      const decodedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.decode(token, {
+        complete: true
+      });
+
+      if (!decodedToken) {
+        return undefined;
+      }
+
+      const jwks = await this.getJWKS();
+      const jwk = jwks.keys[0]; // BUILD CERTIFICATE
+
+      let cert = jwk.x5c[0];
+      cert = cert.match(/.{1,64}/g).join('\n');
+      cert = `-----BEGIN CERTIFICATE-----\n${cert}\n-----END CERTIFICATE-----\n`;
+
+      if (jwk.kid === decodedToken.header.kid) {
+        try {
+          const verifiedToken = jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default.a.verify(token, cert);
+          const expiresAt = verifiedToken.exp * 1000;
+          return verifiedToken && new Date().getTime() < expiresAt ? verifiedToken : undefined;
+        } catch (err) {
+          return undefined;
+        }
+      }
+    }
+
+    return undefined;
   }
 
-  serverAuth(req) {
+  async clientAuth() {
+    const token = js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.getJSON('jwt');
+    const verifiedToken = await this.verifyToken(token);
+    return verifiedToken;
+  }
+
+  async serverAuth(req) {
     if (req.headers.cookie) {
-      // const expirestAtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('expiresAt='));
-      // if (!expirestAtCookie) { return undefined};
-      // const expiresAt = expirestAtCookie.split('=')[1];
-      const cookies = req.headers.cookie;
-      console.log(cookies);
-      const splitedCookies = cookies.split(';');
-      console.log(splitedCookies);
-      const expirestAtCookie = splitedCookies.find(c => c.trim().startsWith('expiresAt='));
-      console.log(expirestAtCookie);
+      const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='));
 
-      if (!expirestAtCookie) {
+      if (!tokenCookie) {
         return undefined;
       }
 
       ;
-      const expiresAtArray = expirestAtCookie.split('=');
-      console.log(expiresAtArray);
-      const expiresAt = expiresAtArray[1];
-      console.log(expiresAt);
-      return new Date().getTime() < expiresAt;
+      const token = tokenCookie.split('=')[1];
+      const verifiedToken = await this.verifyToken(token);
+      /*           const cookies = req.headers.cookie;
+                console.log(cookies);
+                const splitedCookies = cookies.split(';');
+                console.log(splitedCookies);
+                const tokenCookie = splitedCookies.find(c => c.trim().startsWith('jwt='));
+                console.log(tokenCookie);
+                if (!tokenCookie) { return undefined};
+                const expiresAtArray = tokenCookie.split('=');
+                console.log(expiresAtArray);
+                const expiresAt = expiresAtArray[1];
+                console.log(expiresAt) */
+
+      return verifiedToken;
     }
+
+    return undefined;
   }
 
 }
@@ -2054,6 +2097,17 @@ module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_
 /***/ (function(module, exports) {
 
 module.exports = require("auth0-js");
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -2175,6 +2229,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("js-cookie");
+
+/***/ }),
+
+/***/ "jsonwebtoken":
+/*!*******************************!*\
+  !*** external "jsonwebtoken" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("jsonwebtoken");
 
 /***/ }),
 

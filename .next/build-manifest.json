@@ -22,11 +22,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/callback": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/secret": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
