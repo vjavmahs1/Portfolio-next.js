@@ -93,6 +93,29 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./helpers/utils.js":
+/*!**************************!*\
+  !*** ./helpers/utils.js ***!
+  \**************************/
+/*! exports provided: getCookieFromReq */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieFromReq", function() { return getCookieFromReq; });
+const getCookieFromReq = (req, cookieKey) => {
+  const cookie = req.headers.cookie.split(';').find(c => c.trim().startsWith(`${cookieKey}=`));
+
+  if (!cookie) {
+    return undefined;
+  }
+
+  ;
+  return cookie.split('=')[1];
+};
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
@@ -1929,6 +1952,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jsonwebtoken */ "jsonwebtoken");
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
+
 
 
 
@@ -2032,14 +2057,7 @@ class Auth0 {
 
   async serverAuth(req) {
     if (req.headers.cookie) {
-      const tokenCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='));
-
-      if (!tokenCookie) {
-        return undefined;
-      }
-
-      ;
-      const token = tokenCookie.split('=')[1];
+      const token = Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_6__["getCookieFromReq"])(req, 'jwt');
       const verifiedToken = await this.verifyToken(token);
       /*           const cookies = req.headers.cookie;
                 console.log(cookies);

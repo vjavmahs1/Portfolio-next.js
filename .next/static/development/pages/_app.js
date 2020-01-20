@@ -1,5 +1,30 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
+/***/ "./helpers/utils.js":
+/*!**************************!*\
+  !*** ./helpers/utils.js ***!
+  \**************************/
+/*! exports provided: getCookieFromReq */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieFromReq", function() { return getCookieFromReq; });
+var getCookieFromReq = function getCookieFromReq(req, cookieKey) {
+  var cookie = req.headers.cookie.split(';').find(function (c) {
+    return c.trim().startsWith("".concat(cookieKey, "="));
+  });
+
+  if (!cookie) {
+    return undefined;
+  }
+
+  ;
+  return cookie.split('=')[1];
+};
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -38479,6 +38504,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jsonwebtoken */ "./node_modules/jsonwebtoken/index.js");
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _helpers_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../helpers/utils */ "./helpers/utils.js");
+
 
 
 
@@ -38661,41 +38688,28 @@ function () {
   }, {
     key: "serverAuth",
     value: function serverAuth(req) {
-      var tokenCookie, token, verifiedToken;
+      var token, verifiedToken;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function serverAuth$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
               if (!req.headers.cookie) {
-                _context4.next = 10;
+                _context4.next = 6;
                 break;
               }
 
-              tokenCookie = req.headers.cookie.split(';').find(function (c) {
-                return c.trim().startsWith('jwt=');
-              });
-
-              if (tokenCookie) {
-                _context4.next = 4;
-                break;
-              }
-
-              return _context4.abrupt("return", undefined);
-
-            case 4:
-              ;
-              token = tokenCookie.split('=')[1];
-              _context4.next = 8;
+              token = Object(_helpers_utils__WEBPACK_IMPORTED_MODULE_9__["getCookieFromReq"])(req, 'jwt');
+              _context4.next = 4;
               return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.verifyToken(token));
 
-            case 8:
+            case 4:
               verifiedToken = _context4.sent;
               return _context4.abrupt("return", verifiedToken);
 
-            case 10:
+            case 6:
               return _context4.abrupt("return", undefined);
 
-            case 11:
+            case 7:
             case "end":
               return _context4.stop();
           }

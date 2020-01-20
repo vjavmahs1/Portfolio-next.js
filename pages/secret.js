@@ -4,17 +4,57 @@ import BasePage from '../components/BasePage'
 
 import withAuth from '../components/hoc/withAuth';
 
+import {getSecretData, getSecretDataServer} from '../actions/index'
 
 class Secret extends React.Component {
 
-    static getInitialProps() {
-        const superSecretValue = 'Super Secret Value';
+    constructor(props){
+        super();
 
-        return {superSecretValue}
+        this.state = {
+            secretData: []
+        }
+    }
+
+    static async getInitialProps({req}) {
+        const anotherSecretData = await getSecretData(req) 
+        console.log(anotherSecretData);
+        
+        return {anotherSecretData}
+    }
+
+
+    async componentDidMount() {
+        const secretData = await getSecretData();
+        console.log(secretData);
+        
+        this.setState({
+            secretData
+        })
+    }
+
+
+    displaySecretData() {
+        const {secretData} = this.state;
+        console.log(secretData);
+        
+
+        if(secretData && secretData.length > 0) {
+            return secretData.map((data, index) => {
+                return (
+                    <div key={index}>
+                    <p>{data.title}</p>
+                    <p>{data.description}</p>
+                    </div>
+
+                )
+            })
+        }
+
+        return null
     }
 
     render() {
-        debugger
         const {superSecretValue} = this.props;
 
 
@@ -23,6 +63,7 @@ class Secret extends React.Component {
                 <BasePage>
                 <h1>I am Secret page</h1>
                 <h2>{superSecretValue}</h2>
+                {this.displaySecretData()}
                 </BasePage>
             </BaseLayout>
         )
