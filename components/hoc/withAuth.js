@@ -21,6 +21,7 @@ export default role =>  Component =>
             
             const userRole = user && user[`${namespace}roles`]
             
+            
             let isAuthorized = false;
     
             if(role) {
@@ -40,8 +41,9 @@ export default role =>  Component =>
                 )
             } else if (!isAuthorized) {
                 return (
-                    <BaseLayout {...this.props.auth}> 
-                    <BasePage>
+                <BaseLayout {...this.props.auth}> 
+                    <BasePage >
+
                     <h1>You are not authorized. You don't have a permission to visit this page</h1>
     
                     </BasePage>
@@ -53,7 +55,7 @@ export default role =>  Component =>
         } 
     
         alertMessage() {
-            alert('Some Message');zx
+            alert('Some Message');
     
         }
         
