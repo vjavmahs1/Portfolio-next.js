@@ -2,6 +2,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, Label } from 'reactstrap';
+import PortInput from '../form/Portinput'
 
 
 
@@ -37,30 +38,30 @@ const PortfolioNewForm = () => (
     >
       {({ isSubmitting }) => (
         <Form>
-            <FormGroup>
-                <Label>Title</Label>
-                <Field className="form-control" type='text' name="title" />
-                <ErrorMessage name="title" component="div" />
-            </FormGroup>
+ 
+            <Field 
+                type='text' 
+                name="title" 
+                label="Title"
+                component={PortInput}/>
+            
+            <Field 
+                type='textarea' 
+                name="description"
+                label="Description" 
+                component={PortInput}/>
+            
+            <Field 
+                type='text' 
+                name="skills" 
+                label="Skills"
+                component={PortInput}/>
 
-             <FormGroup>
-                <Label>Description</Label>
-                <Field className="form-control" type="textarea" name="description"  component="textarea"/>
-                <ErrorMessage name="description" component="div" />
-            </FormGroup>
-
-            <FormGroup>
-                <Label>Skills</Label>
-                <Field className="form-control" type='text' name="skills" />
-                <ErrorMessage name="skills" component="div" />
-            </FormGroup>
-
-
-            <FormGroup>
-                <Label>Github Link</Label>
-                <Field className="form-control" type='text' name="link" />
-                <ErrorMessage name="link" component="div" />
-            </FormGroup>
+            <Field 
+                type='text' 
+                name="link" 
+                label="Github Link"
+                component={PortInput}/>
 
 
             <button type="submit" disabled={isSubmitting}>
