@@ -21,10 +21,6 @@
     "/portfolioNew": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/secret": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }

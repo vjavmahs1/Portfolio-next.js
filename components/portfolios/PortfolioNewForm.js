@@ -1,40 +1,35 @@
 // Render Prop
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Button, FormGroup, Label } from 'reactstrap';
+import { Button} from 'reactstrap';
 import PortInput from '../form/Portinput'
 
 
 
-const validateInputs = (validate) => {
+const validateInputs = (values) => {
     const errors = {};
 
-/*     if (!values.email) {
-        errors.email = 'Required';
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-      ) {
-        errors.email = 'Invalid email address';
-      }
-      return errors; */
+        Object.keys(values).forEach((key) => {
+
+            if(!values[key]) {
+                errors[key] = `Field ${key} is required!`
+            }
+            
+        }) 
 
       return errors;
 }
 
+const INITIAL_VALUES = { title: '', description: '' , skills: '', link: ''}
 
 
-const PortfolioNewForm = () => (
+const PortfolioNewForm = (props) => (
   <div>
     <h1>Any place in your app!</h1>
     <Formik
-      initialValues={{ title: '', description: '' , skills: '', link: ''}}
+      initialValues={INITIAL_VALUES}
       validate={validateInputs}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
+      onSubmit={props.onSubmit}
     >
       {({ isSubmitting }) => (
         <Form>
@@ -64,9 +59,9 @@ const PortfolioNewForm = () => (
                 component={PortInput}/>
 
 
-            <button type="submit" disabled={isSubmitting}>
+            <Button size="lg" color="primary" type="submit" disabled={isSubmitting}>
                 Create
-            </button>
+            </Button>
         </Form>
       )}
     </Formik>
