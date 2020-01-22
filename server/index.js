@@ -37,15 +37,8 @@ app.prepare()
   const server = express()
 
   server.use(bodyParser.json())
-  server.use('/api/v1/portfolios', portfolioRoutes)
+  server.use('/api/v1/portfolios', portfolioRoutes);
     
-  server.get('/portfolio/:id', (req, res) => {
-      console.log('called');
-      
-      const actualPage = '/portfolio'; 
-      const queryParams = {id: req.params.id}
-      app.render(req, res, actualPage, queryParams)
-  })
 
   server.get('/api/v1/secret', authService.checkJWT, (req, res) => {
     return res.json(secretData);
@@ -58,8 +51,6 @@ server.get('/api/v1/onlysiteowner', authService.checkJWT, authService.checkRole(
   server.get('*', (req, res) => {
     return handle(req, res)
   })
-
-
 
   server.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
