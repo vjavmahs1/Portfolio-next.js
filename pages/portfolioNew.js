@@ -8,6 +8,7 @@ import PortfolioNewForm from '../components/portfolios/PortfolioNewForm'
 import {Row, Col} from 'reactstrap'
 
 import {createPortfolio} from '../actions'
+import {Router} from '../routes'
 
 class PortfolioNew extends React.Component {
 
@@ -20,7 +21,7 @@ class PortfolioNew extends React.Component {
     savePortfolio(data) {
         createPortfolio(data)
         .then((portfolio) => {
-            console.log(portfolio)
+            Router.pushRoute('/portfolios');
         })
         .catch((err)=> {console.error(err)
         })
