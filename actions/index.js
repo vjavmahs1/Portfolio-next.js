@@ -21,3 +21,8 @@ export const getSecretData = async (req) => {
 
 }
 
+export const getPortfolios = async (req) => {
+    const url = 'http://localhost:3000/api/v1/portfolios'
+    return await axios.get(url).then(response => response.data);
+}
+
