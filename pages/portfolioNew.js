@@ -7,6 +7,8 @@ import withAuth from '../components/hoc/withAuth'
 import PortfolioNewForm from '../components/portfolios/PortfolioNewForm'
 import {Row, Col} from 'reactstrap'
 
+import {createPortfolio} from '../actions'
+
 class PortfolioNew extends React.Component {
 
     constructor(props){
@@ -16,7 +18,12 @@ class PortfolioNew extends React.Component {
     } 
 
     savePortfolio(data) {
-        alert(JSON.stringify(data, null, 2))
+        createPortfolio(data)
+        .then((portfolio) => {
+            console.log(portfolio)
+        })
+        .catch((err)=> {console.error(err)
+        })
     }
     render() {
         return (

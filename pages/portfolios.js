@@ -25,10 +25,10 @@ class Portfolios extends React.Component {
                 <React.Fragment key={index}>
                     <span>
                     <Card className="portfolio-card">
-                        <CardHeader className="portfolio-card-header">{portfolio.title} {index}</CardHeader>
+                        <CardHeader className="portfolio-card-header">{portfolio.title}</CardHeader>
                         <CardBody>
-                        <p className="portfolio-card-city"> Some Location {index} </p>
-                        <CardTitle className="portfolio-card-title">Some Company {index}</CardTitle>
+                        <p className="portfolio-card-city"> {portfolio.skills} </p>
+                        <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
                         <CardText className="portfolio-card-text">{portfolio.description} {index}</CardText>
                         <div className="readMore"> </div>
                         </CardBody>
@@ -38,8 +38,7 @@ class Portfolios extends React.Component {
                 </Col>
             )
         })
-    }
-
+    } 
     render() {
         
         const {portfolios}  = this.props    
