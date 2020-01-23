@@ -26,10 +26,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/portfolioNew": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/portfolios": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"

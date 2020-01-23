@@ -3,11 +3,17 @@ import Link from 'next/link'
 import BasePage from '../components/BasePage'
 import BaseLayout from '../components/layouts/BaseLayout'
 import { Col, Row, Card, CardHeader, CardBody, CardText, CardTitle, Button} from 'reactstrap'
-import {getPortfolios} from '../actions';
+import {getPortfolios, deletePortfolio} from '../actions';
 
 import {Router} from '../routes'
 
 class Portfolios extends React.Component {
+
+    constructor(props) {
+        super()
+
+        this.deletePortfolio = this.deletePortfolio.bind(this)
+    }
 
     static async getInitialProps({req}) {
         let portfolios = [];
@@ -17,6 +23,22 @@ class Portfolios extends React.Component {
             console.error(err)
         }
         return { portfolios };
+    }
+
+    displayDeleteWarning(portfolioId){
+        const isConfirm = confirm('Are you sure you want to delete this portfolio??')
+
+        if(isConfirm) {
+            this.deletePortfolio(portfolioId)
+        }
+    }
+
+    deletePortfolio(portfolioId) {
+        deletePortfolio(portfolioId).then(()=> {
+            Router.pushRoute('/portfolios')
+        })
+        .catch(err => console.error(err)
+        )
     }
 
     renderPortfolios(portfolios) {
@@ -37,7 +59,7 @@ class Portfolios extends React.Component {
                         { isAuthenticated && isSiteOwner&&
                         <React.Fragment>
                         <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
-                            <Button color="danger">Delete</Button>
+                            <Button onClick={() => this.displayDeleteWarning(portfolio._id)} color="danger">Delete</Button>
                         </React.Fragment>
                         }
                         </div>

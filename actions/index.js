@@ -45,3 +45,8 @@ export const getPortfolioById = async(id) => {
 export const updatePortfolio = async (portfolioData) => {
     return await axiosInstance.patch(`/portfolios/${portfolioData._id}`, portfolioData, setAuthHeader()).then(response => response.data)
 }
+
+
+export const deletePortfolio = async(id) => {
+    return await axiosInstance.delete(`/portfolios/${id}`, setAuthHeader()).then(response => response.data)
+}
