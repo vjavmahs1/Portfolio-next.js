@@ -1893,6 +1893,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+const namespace = 'http://localhost:3000';
 class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   static async getInitialProps({
     Component,
@@ -1901,15 +1902,17 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   }) {
     let pageProps = {};
     const user = false ? undefined : await _services_auth0__WEBPACK_IMPORTED_MODULE_5__["default"].serverAuth(ctx.req);
-    const auth = {
-      user,
-      isAuthenticated: !!user
-    };
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
+    const isSiteOwner = user && user[namespace + '/roles'] === 'siteOwner';
+    const auth = {
+      user,
+      isAuthenticated: !!user,
+      isSiteOwner
+    };
     return {
       pageProps,
       auth

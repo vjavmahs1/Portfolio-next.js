@@ -38389,6 +38389,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
 
+var namespace = 'http://localhost:3000';
 
 var MyApp =
 /*#__PURE__*/
@@ -38415,7 +38416,7 @@ function (_App) {
   }], [{
     key: "getInitialProps",
     value: function getInitialProps(_ref) {
-      var Component, router, ctx, pageProps, user, auth;
+      var Component, router, ctx, pageProps, user, isSiteOwner, auth;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getInitialProps$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -38442,29 +38443,31 @@ function (_App) {
 
             case 11:
               user = _context.t0;
-              auth = {
-                user: user,
-                isAuthenticated: !!user
-              };
 
               if (!Component.getInitialProps) {
-                _context.next = 17;
+                _context.next = 16;
                 break;
               }
 
-              _context.next = 16;
+              _context.next = 15;
               return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Component.getInitialProps(ctx));
 
-            case 16:
+            case 15:
               pageProps = _context.sent;
 
-            case 17:
+            case 16:
+              isSiteOwner = user && user[namespace + '/roles'] === 'siteOwner';
+              auth = {
+                user: user,
+                isAuthenticated: !!user,
+                isSiteOwner: isSiteOwner
+              };
               return _context.abrupt("return", {
                 pageProps: pageProps,
                 auth: auth
               });
 
-            case 18:
+            case 19:
             case "end":
               return _context.stop();
           }
