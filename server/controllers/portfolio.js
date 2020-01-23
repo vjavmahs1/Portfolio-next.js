@@ -31,10 +31,16 @@ exports.updatePortfolio = (req, res) => {
     const portfolioData = req.body;
     
     Portfolio.findById(portfolioId, (err, foundPortfolio) => {
-        if(err) {
+        if (err) {
             return res.status(422).send(err);
-        } 
-        return res.json(foundPortfolio);
+        }
+        foundPortfolio.set(portfolioData);
+        foundPortfolio.save((err, savedPortfolio) => {
+            if(err) {
+                return res.status(422).send(err);
+            }
+            return res.json(savedPortfolio);
+        })
     })
 } 
 
@@ -49,12 +55,16 @@ exports.deletePortfolio = (req, res) => {
     })
 }
 exports.getPortfolioById = (req, res) => {
+    
     const portfolioId = req.params.id;
 
-    Portfolio.findById(portfolioId, (err, foundPortfolio) => {
-        if(err){
-            return res.status(422).send(err);
-        }
-        return res.json(foundPortfolio)
-    })
+    Portfolio.findById(portfolioId)
+        .select('-__v')
+        .exec((err, foundPortfolio) => {
+            if(err) {
+                return res.status(422).send(err);
+            } 
+            return res.json(foundPortfolio);
+        })
+    
 }
