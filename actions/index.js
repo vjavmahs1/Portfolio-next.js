@@ -38,3 +38,6 @@ export const createPortfolio = async (portfolioData) => {
 
 }
 
+export const getPortfolioById = async(id) => {
+    return await axiosInstance.get(`/portfolios/${id}`).then(response => response.data)
+}

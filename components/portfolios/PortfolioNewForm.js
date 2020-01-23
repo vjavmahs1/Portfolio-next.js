@@ -20,16 +20,15 @@ const validateInputs = (values) => {
       return errors;
 }
 
-const INITIAL_VALUES = { title: '', description: '' , skills: '', link: ''}
 
 
-const PortfolioNewForm = (props) => (
+const PortfolioNewForm = ({initialValues, onSubmit}) => (
   <div>
     <h1>Any place in your app!</h1>
     <Formik
-      initialValues={INITIAL_VALUES}
+      initialValues={initialValues}
       validate={validateInputs}
-      onSubmit={props.onSubmit}
+      onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
         <Form>

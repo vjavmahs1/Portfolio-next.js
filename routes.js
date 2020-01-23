@@ -2,4 +2,5 @@ const routes = require('next-routes')
 
                                                     // Name   Page      Pattern
 module.exports = routes()                           // ----   ----      -----
-.add('test', '/test/:id')                         // blog   blog      /blog/:slug
+.add('portfolio', '/portfolio/:id')                         // blog   blog      /blog/:slug
+.add('portfolioEdit', '/portfolio/:id/edit')                         // blog   blog      /blog/:slug

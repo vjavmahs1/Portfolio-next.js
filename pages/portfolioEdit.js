@@ -7,19 +7,30 @@ import withAuth from '../components/hoc/withAuth'
 import PortfolioNewForm from '../components/portfolios/PortfolioNewForm'
 import {Row, Col} from 'reactstrap'
 
-import {createPortfolio} from '../actions'
+import {createPortfolio, getPortfolioById} from '../actions'
 import {Router} from '../routes'
 
-const INITIAL_VALUES = { title: '', description: '' , skills: '', link: ''}
+class PortfolioEdit extends React.Component {
 
+    static async getInitialProps({query}) {
+        let portfolio = {};
 
-class PortfolioNew extends React.Component {
+        try{    
+            portfolio = await getPortfolioById(query.id)
+        } catch(err){
+            console.error(err);
+            
+        }
+        console.log(portfolio);
+        return { portfolio }
+    }
 
     constructor(props){
         super();
         this.savePortfolio = this.savePortfolio.bind(this)
 
     } 
+
 
     savePortfolio(data) {
         createPortfolio(data)
@@ -29,13 +40,14 @@ class PortfolioNew extends React.Component {
         .catch((err)=> {console.error(err)
         })
     }
-    render() {
+    render() {        
+        const {portfolio} = this.props
         return (
             <BaseLayout {...this.props.auth}>
                 <BasePage className='portfolio-create-page' title="Create New Portfolio">
                     <Row>
                         <Col md="6">
-                        <PortfolioNewForm initialValues ={INITIAL_VALUES} onSubmit={this.savePortfolio}/>
+                        <PortfolioNewForm initialValues={portfolio} onSubmit={this.savePortfolio}/>
                         </Col>
                     </Row>
                 </BasePage>
@@ -44,4 +56,4 @@ class PortfolioNew extends React.Component {
     }
 }
 
-export default withAuth('siteOwner')(PortfolioNew);
+export default withAuth('siteOwner')(PortfolioEdit);
