@@ -50,7 +50,6 @@ exports.deletePortfolio = (req, res) => {
         if(err) {
             return res.status(422).send(err);
         }
-
         return res.json({status: 'Deleted'});
     })
 }
