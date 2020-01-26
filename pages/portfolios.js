@@ -58,6 +58,8 @@ class Portfolios extends React.Component {
                         <div className="readMore">
                         { isAuthenticated && isSiteOwner&&
                         <React.Fragment>
+
+                        <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="success">Github</Button> {' '}
                         <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
                             <Button onClick={() => this.displayDeleteWarning(portfolio._id)} color="danger">Delete</Button>
                         </React.Fragment>
