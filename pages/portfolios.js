@@ -56,11 +56,12 @@ class Portfolios extends React.Component {
                         <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
                         <CardText className="portfolio-card-text">{portfolio.description} {index}</CardText>
                         <div className="readMore">
+                        <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
+
                         { isAuthenticated && isSiteOwner&&
                         <React.Fragment>
 
                         <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="success">Github</Button> {' '}
-                        <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
                             <Button onClick={() => this.displayDeleteWarning(portfolio._id)} color="danger">Delete</Button>
                         </React.Fragment>
                         }
