@@ -85,7 +85,8 @@
 
 @media (max-width: 991px) {
   .hero-section {
-    width: 341px; }
+    width: 341px;
+    height: 445px; }
     .hero-section-content {
       width: 341px; }
   .hero-welcome-text > h1 {
@@ -218,6 +219,10 @@
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.cv-page .cv-title {
+  text-align: center;
+  margin-bottom: 20px; }
 
 .port-navbar.port-nav-base {
   width: 100%;

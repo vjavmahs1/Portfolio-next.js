@@ -22,11 +22,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/index": [
+    "/cv": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/portfolios": [
+    "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
