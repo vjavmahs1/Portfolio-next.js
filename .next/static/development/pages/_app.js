@@ -38388,8 +38388,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 
 
-
-var namespace = 'http://localhost:3000';
+ //const namespace = 'http://localhost:3000'
 
 var MyApp =
 /*#__PURE__*/
@@ -38456,7 +38455,7 @@ function (_App) {
               pageProps = _context.sent;
 
             case 16:
-              isSiteOwner = user && user[namespace + '/roles'] === 'siteOwner';
+              isSiteOwner = user && user["https://seungjin-portfolio.herokuapp.com//roles"] === 'siteOwner';
               auth = {
                 user: user,
                 isAuthenticated: !!user,
@@ -38518,6 +38517,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var CLIENT_ID = "Gfu07rGdvmOhNd29iUujIZO3lheS72bg";
 
 var Auth0 =
 /*#__PURE__*/
@@ -38527,7 +38527,7 @@ function () {
 
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_5__["default"].WebAuth({
       domain: 'dev-35qetqbm.auth0.com',
-      clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg',
+      clientID: CLIENT_ID,
       redirectUri: "".concat("http://localhost:3000", "/callback"),
       responseType: 'token id_token',
       scope: 'openid profile'
@@ -38561,9 +38561,7 @@ function () {
       // Save tokens!!!
       var expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(authResult.expiresIn * 1000 + new Date().getTime());
 
-      js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.set('user', authResult.idTokenPayload);
       js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.set('jwt', authResult.idToken);
-      js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.set('expiresAt', expiresAt);
     }
   }, {
     key: "login",
@@ -38573,12 +38571,10 @@ function () {
   }, {
     key: "logout",
     value: function logout() {
-      js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.remove('user');
       js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.remove('jwt');
-      js_cookie__WEBPACK_IMPORTED_MODULE_6___default.a.remove('expiresAt');
       this.auth0.logout({
         returnTo: '',
-        clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg'
+        clientID: CLIENT_ID
       });
     }
   }, {

@@ -1892,8 +1892,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+ //const namespace = 'http://localhost:3000'
 
-const namespace = 'http://localhost:3000';
 class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   static async getInitialProps({
     Component,
@@ -1907,7 +1907,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    const isSiteOwner = user && user[namespace + '/roles'] === 'siteOwner';
+    const isSiteOwner = user && user["https://seungjin-portfolio.herokuapp.com//roles"] === 'siteOwner';
     const auth = {
       user,
       isAuthenticated: !!user,
@@ -1963,12 +1963,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const CLIENT_ID = "Gfu07rGdvmOhNd29iUujIZO3lheS72bg";
 
 class Auth0 {
   constructor() {
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_2___default.a.WebAuth({
       domain: 'dev-35qetqbm.auth0.com',
-      clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg',
+      clientID: CLIENT_ID,
       redirectUri: `${"http://localhost:3000"}/callback`,
       responseType: 'token id_token',
       scope: 'openid profile'
@@ -1996,9 +1997,7 @@ class Auth0 {
     // Save tokens!!!
     const expiresAt = _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default()(authResult.expiresIn * 1000 + new Date().getTime());
 
-    js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.set('user', authResult.idTokenPayload);
     js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.set('jwt', authResult.idToken);
-    js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.set('expiresAt', expiresAt);
   }
 
   login() {
@@ -2006,12 +2005,10 @@ class Auth0 {
   }
 
   logout() {
-    js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.remove('user');
     js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.remove('jwt');
-    js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.remove('expiresAt');
     this.auth0.logout({
       returnTo: '',
-      clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg'
+      clientID: CLIENT_ID
     });
   }
 

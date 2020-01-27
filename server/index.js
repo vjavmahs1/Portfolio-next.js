@@ -57,10 +57,12 @@ server.get('/api/v1/onlysiteowner', authService.checkJWT, authService.checkRole(
       res.status(401).send({title:  'Unauthorized', detail: 'Unauthorized access'});
     }
   }); 
+
+  const PORT = process.env.PORT || 3000
     
-  server.use(handle).listen(3000, (err) => {
+  server.use(handle).listen(PORT, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log('> Ready on 3000')
   })
 })
 .catch((ex) => {

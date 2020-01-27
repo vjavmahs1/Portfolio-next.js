@@ -2,8 +2,6 @@ import React from 'react';
 import BaseLayout from '../layouts/BaseLayout'
 import BasePage from '../BasePage'
 
-const namespace = 'http://localhost:3000/'
-
 export default role =>  Component => 
          class withAuth extends React.Component{
         
@@ -19,7 +17,7 @@ export default role =>  Component =>
     
             console.log(user);
             
-            const userRole = user && user[`${namespace}roles`]
+            const userRole = user && user[`${process.env.NAMESPACE}/roles`]
             
             
             let isAuthorized = false;

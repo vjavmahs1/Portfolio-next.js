@@ -4,12 +4,14 @@ import axios from 'axios'
 import jwt from 'jsonwebtoken';
 import {getCookieFromReq} from '../helpers/utils'
 
+const CLIENT_ID = process.env_CLIENT_ID;
+
 class Auth0 {
 
     constructor() {
         this.auth0 = new auth0.WebAuth({
             domain: 'dev-35qetqbm.auth0.com',
-            clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg',
+            clientID: CLIENT_ID,
             redirectUri: `${process.env.BASE_URL}/callback`,
             responseType: 'token id_token',
             scope: 'openid profile'
@@ -39,9 +41,7 @@ class Auth0 {
         // Save tokens!!!
         const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
 
-        Cookies.set('user', authResult.idTokenPayload);
         Cookies.set('jwt', authResult.idToken);
-        Cookies.set('expiresAt', expiresAt);
 
 
     }
@@ -51,13 +51,11 @@ class Auth0 {
     }
 
     logout() {
-        Cookies.remove('user');
         Cookies.remove('jwt');
-        Cookies.remove('expiresAt');
 
         this.auth0.logout({
             returnTo: '',
-            clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg'
+            clientID: CLIENT_ID
         })
     }
 
