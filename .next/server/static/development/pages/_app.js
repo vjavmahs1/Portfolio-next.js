@@ -1969,7 +1969,7 @@ class Auth0 {
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_2___default.a.WebAuth({
       domain: 'dev-35qetqbm.auth0.com',
       clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: `${"http://localhost:3000"}/callback`,
       responseType: 'token id_token',
       scope: 'openid profile'
     });

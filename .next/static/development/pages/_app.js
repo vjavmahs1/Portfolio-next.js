@@ -38528,7 +38528,7 @@ function () {
     this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_5__["default"].WebAuth({
       domain: 'dev-35qetqbm.auth0.com',
       clientID: 'Gfu07rGdvmOhNd29iUujIZO3lheS72bg',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: "".concat("http://localhost:3000", "/callback"),
       responseType: 'token id_token',
       scope: 'openid profile'
     });
