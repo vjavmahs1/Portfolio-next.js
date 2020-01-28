@@ -20,7 +20,6 @@ const BaseLayout = (props) => {
             <meta property="og:type" content=""/>
             <meta property="og:description" content=""/>
             <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-            <link rel="icon" type="image/ico" href="/static/favicon.ico"/>
         </Head>
 
         <div className="layout-container" >
