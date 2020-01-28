@@ -14,7 +14,7 @@ class Index extends React.Component {
             isFlipping: false
         }
 
-        this.roles = ['Developer', 'Tech Lover', 'Team Player' , 'React.js']
+        this.roles = ['Developer.', 'Tech Lover.', 'Great Team Player.' , 'Software Engineer.']
     }
 
     componentDidMount() {
@@ -82,9 +82,8 @@ class Index extends React.Component {
                     <Col md="6" className="hero-welcome-wrapper">
                     <div className="hero-welcome-text">
                         <h1>
-                        {isAuthenticated && <span> {user.name} </span>}
                         Welcome to the portfolio website of Seungjin Kim.
-                        Get informed, collaborate and discover projects I was working on through the years!
+                        Get informed and discover projects I was working on through the years!
                         </h1>
                     </div>
                     <Typed

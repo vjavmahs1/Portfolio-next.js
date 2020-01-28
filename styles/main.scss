@@ -16,6 +16,17 @@ html, body {
     font-family: 'Montserrat', 'Helvetica' !important;
 }
 
+.cover {
+    background-image: linear-gradient(45deg,#00aeef 0%,#096fb9 100%);
+    position: relative;
+  }
+
+  .background-image {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+  }
+
 .self-typed {
     font-size: 31px;
     font-weight: bold;
@@ -36,7 +47,7 @@ html, body {
     .page-header {
       .page-header-title {
         font-weight: 700;
-        color: black;
+        color: white;
         display: inline-block;
         margin-bottom: 20px;
       }

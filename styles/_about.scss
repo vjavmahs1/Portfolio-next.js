@@ -1,13 +1,16 @@
+
+
 .about-page {
     .left-side {
       margin-top: 10vh;
   
-      color: black;
+      color: white;
       text-align: left;
     }
   
     .fadein {
       opacity: 0;
+      color: white;
   
       -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
          -moz-animation: fadein 2s; /* Firefox < 16 */

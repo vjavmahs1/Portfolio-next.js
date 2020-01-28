@@ -83,8 +83,9 @@ class Portfolios extends React.Component {
         console.log(this.props);
     
         return (
-            <BaseLayout title="Seungjin Kim - Portfolois" {...this.props.auth}>
-                <BasePage className='portfolio-page' title ="Portfolios">
+            <BaseLayout  headerType="index" title="Seungjin Kim - Portfolois" {...this.props.auth}>
+                <BasePage className='portfolio-page cover' title ="Portfolios">
+
                     { isAuthenticated && isSiteOwner &&
                     <Button onClick={() => Router.pushRoute('/portfolioNew')}
                              color="success" className="create-port-btn">Create Portfolio</Button>

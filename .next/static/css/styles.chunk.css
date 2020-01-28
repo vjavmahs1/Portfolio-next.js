@@ -92,11 +92,6 @@
   .hero-welcome-text > h1 {
     margin-top: 0px; } }
 
-.background-image {
-  position: absolute;
-  width: 1762px;
-  height: 493px; }
-
 .shadow-custom {
   width: 100%;
   height: 100%;
@@ -176,11 +171,12 @@
 
 .about-page .left-side {
   margin-top: 10vh;
-  color: black;
+  color: white;
   text-align: left; }
 
 .about-page .fadein {
   opacity: 0;
+  color: white;
   -webkit-animation: fadein 2s;
   /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s;
@@ -261,6 +257,15 @@
 html, body {
   font-family: 'Montserrat', 'Helvetica' !important; }
 
+.cover {
+  background-image: linear-gradient(45deg, #00aeef 0%, #096fb9 100%);
+  position: relative; }
+
+.background-image {
+  position: absolute;
+  width: 70%;
+  height: 80%; }
+
 .self-typed {
   font-size: 31px;
   font-weight: bold;
@@ -277,7 +282,7 @@ html, body {
   min-height: 100vh; }
   .base-page .page-header .page-header-title {
     font-weight: 700;
-    color: black;
+    color: white;
     display: inline-block;
     margin-bottom: 20px; }
 
