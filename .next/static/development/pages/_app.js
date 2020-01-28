@@ -38455,7 +38455,7 @@ function (_App) {
               pageProps = _context.sent;
 
             case 16:
-              isSiteOwner = user && user["https://seungjin-portfolio.herokuapp.com//roles"] === 'siteOwner';
+              isSiteOwner = user && user["https://seungjin-portfolio.herokuapp.com/roles"] === 'siteOwner';
               auth = {
                 user: user,
                 isAuthenticated: !!user,

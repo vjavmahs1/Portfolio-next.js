@@ -18,7 +18,7 @@ class About extends React.Component {
                     </Col>
                     <Col md="6">
                         <div className="fadein" id="intro">
-                        <p>My name is Filip Jerga and I am an experienced software engineer and freelance developer. </p>
+                        <p>My name is Seungjin and I am an experienced software engineer and freelance developer. </p>
                         <p>
                         I have a Master's degree in Artificial Intelligence and several years of experience working
                         on a wide range of technologies and projects from C++ development for ultrasound devices to

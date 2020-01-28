@@ -1907,7 +1907,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    const isSiteOwner = user && user["https://seungjin-portfolio.herokuapp.com//roles"] === 'siteOwner';
+    const isSiteOwner = user && user["https://seungjin-portfolio.herokuapp.com/roles"] === 'siteOwner';
     const auth = {
       user,
       isAuthenticated: !!user,
