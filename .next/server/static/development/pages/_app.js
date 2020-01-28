@@ -2007,7 +2007,7 @@ class Auth0 {
   logout() {
     js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.remove('jwt');
     this.auth0.logout({
-      returnTo: '',
+      returnTo: "http://localhost:3000",
       clientID: CLIENT_ID
     });
   }

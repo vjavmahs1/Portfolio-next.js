@@ -10,9 +10,6 @@ module.exports = withCSS(withSass({
                 
             }
         }
-        if (dev) {
-            config.devtool = 'cheap-module-source-map';
-          }
         return config;
     }
 })) 
