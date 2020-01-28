@@ -7,8 +7,12 @@ module.exports = withCSS(withSass({
         if(config.mode ==='production') {
             if(Array.isArray(config.optimization.minimizer)) {
                 config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
+                
             }
         }
+        if (dev) {
+            config.devtool = 'cheap-module-source-map';
+          }
         return config;
     }
 })) 
