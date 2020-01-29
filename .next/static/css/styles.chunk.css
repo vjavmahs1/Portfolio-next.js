@@ -182,15 +182,15 @@
 .about-page .fadein {
   opacity: 0;
   color: white;
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadein 1s;
   /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s;
+  -moz-animation: fadein 1s;
   /* Firefox < 16 */
-  -ms-animation: fadein 2s;
+  -ms-animation: fadein 1s;
   /* Internet Explorer */
-  -o-animation: fadein 2s;
+  -o-animation: fadein 1s;
   /* Opera < 12.1 */
-  animation: fadein 2s;
+  animation: fadein 1s;
   -webkit-animation-fill-mode: forwards;
   /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
   -moz-animation-fill-mode: forwards;
@@ -204,15 +204,15 @@
   font-weight: bold; }
 
 .about-page .subtitle {
-  -webkit-animation-delay: 2.2s;
-  -moz-animation-delay: 2.2s;
-  animation-delay: 2.2s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  animation-delay: 1.5s;
   font-size: 33px; }
 
 .about-page .subsubTitle {
-  -webkit-animation-delay: 3.6s;
-  -moz-animation-delay: 3.6s;
-  animation-delay: 3.6s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
   font-size: 18px; }
 
 @keyframes fadein {
