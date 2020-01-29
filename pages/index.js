@@ -42,10 +42,6 @@ class Index extends React.Component {
                         headerType="index"
                         title="Seungjin Kim - Portfolio">
             <div className="main-section">
-                <div className="background-image">
-                <img src="/static/images/background-index.png" />
-                </div>
-
                 <Container>
                 <Row>
                     <Col md="6">
@@ -53,25 +49,18 @@ class Index extends React.Component {
                         <div className={`flipper ${isFlipping ? 'isFlipping' : ''}` }>
                         <div className="front">
                             <div className="hero-section-content">
-                            <h2> Full Stack Web Developer </h2>
                             <div className="hero-section-content-intro">
-                                Have a look at my portfolio.
+                                 Full Stack Web Developer
                             </div>
                             </div>
-                            <img className="image" src="/static/images/section-1.jpg"/>
+                            <img className="image" src="/static/images/forfun.png"/>
                             <div className="shadow-custom">
                             <div className="shadow-inner"> </div>
                             </div>
                         </div>
                         <div className="back">
-                            <div className="hero-section-content">
-                            <h2> Get in touch with me </h2>
-                            <div className="hero-section-content-intro">
-                                Enthusiastic Learner
-                            </div>
-                            </div>
-                            <img className="image" src="/static/images/section-2.jpg"/>
-                            <div className="shadow-custom shadow-custom-2">
+                            <img className="image" src="/static/images/tamu.png"/>
+                            <div className="shadow-custom shadow-custom-1">
                             <div className="shadow-inner"> </div>
                             </div>
                         </div>
