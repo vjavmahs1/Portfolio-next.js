@@ -50,9 +50,10 @@ class Portfolios extends React.Component {
                         <Card className="portfolio-card">
                             <CardHeader className="portfolio-card-header">{portfolio.title}</CardHeader>
                             <CardBody>
-                            <p className="portfolio-card-city"> {portfolio.skills} </p>
                             <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
-                            <CardText className="portfolio-card-text">{portfolio.description} {index}</CardText>
+                            <CardText className="portfolio-card-text">{portfolio.description}</CardText>
+                            <p className="portfolio-card-city"> {portfolio.skills} </p>
+
                             <div className="readMore">
                             <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} style={{backgroundColor:'#FFC72C', color: '#005587', fontWeight:'bold'}} >Github</Button> {' '}
                             { isAuthenticated && isSiteOwner&&
