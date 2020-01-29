@@ -46,30 +46,27 @@ class Portfolios extends React.Component {
         
         return portfolios.map((portfolio, index) => {
             return (
-                <Col md="4">
                 <React.Fragment key={index}>
-                    <span>
-                    <Card className="portfolio-card">
-                        <CardHeader className="portfolio-card-header">{portfolio.title}</CardHeader>
-                        <CardBody>
-                        <p className="portfolio-card-city"> {portfolio.skills} </p>
-                        <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
-                        <CardText className="portfolio-card-text">{portfolio.description} {index}</CardText>
-                        <div className="readMore">
-                        <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} style={{backgroundColor:'#FFC72C', color: '#005587', fontWeight:'bold'}} >Github</Button> {' '}
-                        { isAuthenticated && isSiteOwner&&
-                        <React.Fragment>
-                          <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
-                            <Button onClick={() => this.displayDeleteWarning(portfolio._id)} color="danger">Delete</Button>
-                        </React.Fragment>
-                        }
-                        </div>
-                        </CardBody>
+                        <Card className="portfolio-card">
+                            <CardHeader className="portfolio-card-header">{portfolio.title}</CardHeader>
+                            <CardBody>
+                            <p className="portfolio-card-city"> {portfolio.skills} </p>
+                            <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
+                            <CardText className="portfolio-card-text">{portfolio.description} {index}</CardText>
+                            <div className="readMore">
+                            <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} style={{backgroundColor:'#FFC72C', color: '#005587', fontWeight:'bold'}} >Github</Button> {' '}
+                            { isAuthenticated && isSiteOwner&&
+                            <React.Fragment>
+                            <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
+                                <Button onClick={() => this.displayDeleteWarning(portfolio._id)} color="danger">Delete</Button>
+                            </React.Fragment>
+                            }
+                            </div>
+                            </CardBody>
+                        </Card>
 
-                    </Card>
-                    </span>
+
                 </React.Fragment>
-                </Col>
             )
         })
     } 
@@ -88,9 +85,10 @@ class Portfolios extends React.Component {
                     <Button onClick={() => Router.pushRoute('/portfolioNew')}
                              color="success" className="create-port-btn">Create Portfolio</Button>
                     }
-                    <Row>
+                        <div className="card-container">
                         {this.renderPortfolios(portfolios)}
-                    </Row>
+                        </div>
+
                 </BasePage>
             </BaseLayout>
         )
