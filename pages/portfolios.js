@@ -2,8 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 import BasePage from '../components/BasePage'
 import BaseLayout from '../components/layouts/BaseLayout'
-import { Col, Row, Card, CardHeader, CardBody, CardText, CardTitle, Button} from 'reactstrap'
+import { Col, Row, Card, CardHeader, CardBody, CardText, CardTitle, Button, Container} from 'reactstrap'
 import {getPortfolios, deletePortfolio} from '../actions';
+
+/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faCircle } from '@fortawesome/free-solid-svg-icons'
+ */
+
 
 import {Router} from '../routes'
 
@@ -90,6 +96,23 @@ class Portfolios extends React.Component {
                         {this.renderPortfolios(portfolios)}
                         </div>
 
+{/*                     <footer>
+                        <Container>
+                        <Row>
+                            <div className="col-lg-8 col-md-10 mx-auto">
+                            <ul className="list-inline text-center">
+                                <li className="list-inline-item">
+                                <a target="_blank" href="https://github.com/vjavmahs1">
+
+                                    <FontAwesomeIcon icon={faGithub} color="white" size="3x" /> 
+                                </a>
+                                </li>
+                            </ul>
+                            <p className="copyright">Copyright &copy; Seungjin 2020</p>
+                            </div>
+                        </Row>
+                        </Container>
+                    </footer> */}
                 </BasePage>
             </BaseLayout>
         )

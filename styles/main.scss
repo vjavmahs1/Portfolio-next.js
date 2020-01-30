@@ -11,9 +11,26 @@
 //Components
 @import './header.scss';
 
+  // Styling for the footer
+  footer {
+    padding: 50px 0 65px;
+    .list-inline {
+      margin: 0;
+      padding: 0;
+    }
+    .copyright {
+      font-size: 14px;
+      margin-bottom: 0;
+      text-align: center;
+      color: white;
+    }
+  }
+
 
 html, body {
     font-family: 'Montserrat', 'Helvetica' !important;
+    overscroll-behavior-y: none;
+
 }
 
 .cover {
@@ -42,7 +59,7 @@ html, body {
     padding: 150px 0;
     color: black;
     background-color: #ecedee;
-    min-height: 100vh;
+    min-height: 80vh;
   
     .page-header {
       .page-header-title {

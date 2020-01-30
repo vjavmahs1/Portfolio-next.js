@@ -38,10 +38,10 @@ class Index extends React.Component {
         const {user, isAuthenticated } = this.props.auth
         const {isFlipping} = this.state
         return (
-            <BaseLayout className={`cover ${isFlipping ? 'cover-1' : 'cover-0'}`} {...this.props.auth}
+            <BaseLayout {...this.props.auth}
                         headerType="index"
                         title="Seungjin Kim - Portfolio">
-            <div className="main-section">
+            <div className="main-section ">
                 <Container>
                 <Row>
                     <Col md="6">
@@ -71,7 +71,7 @@ class Index extends React.Component {
                     <Col md="6" className="hero-welcome-wrapper">
                     <div className="hero-welcome-text">
                         <h1>
-                        Welcome to the portfolio website of Seungjin Kim.
+                        Welcome to the portfolio website.
                         Get informed and discover projects I was working on through the years!
                         </h1>
                     </div>

@@ -3,6 +3,9 @@ import App, { Container } from 'next/app'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/main.scss'
 import auth0 from '../services/auth0'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
+config.autoAddCss = false
 
 //const namespace = 'http://localhost:3000'
 export default class MyApp extends App {
