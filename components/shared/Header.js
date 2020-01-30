@@ -64,6 +64,10 @@ export default class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+            <NavItem className="port-navbar-item">
+                <BsNavLink route = "/" title="Home"/>
+              </NavItem>
+
               <NavItem className="port-navbar-item">
                 <BsNavLink route = "/about" title="About"/>
               </NavItem>
@@ -75,7 +79,7 @@ export default class Header extends React.Component {
               </NavItem> */}
               
               <NavItem className="port-navbar-item">
-                <BsNavLink route = "/cv" title="CV"/>
+                <a className='nav-link port-navbar-link' target="_blank" href="/static/Resume.pdf">CV</a>
               </NavItem>
   
               { !isAuthenticated ?
