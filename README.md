@@ -1,8 +1,6 @@
 # Portfolio-next.js
 
-Portfolli website implemented using Next.js, SCSS, Node.js, MongoDB.
-
-![](header.png)
+Portfolio website implemented using Next.js, SCSS, Node.js, MongoDB.
 
 ## Development setup
 
@@ -16,5 +14,3 @@ npm start for production mode
 ## Meta
 
 Seungjin Kim – kim.sjin1221@gmail.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
