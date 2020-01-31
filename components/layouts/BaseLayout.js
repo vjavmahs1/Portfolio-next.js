@@ -37,14 +37,13 @@ const BaseLayout = (props) => {
                                         <ul className="list-inline text-center">
                                             <li className="list-inline-item">
                                                 <a target="_blank" href="https://github.com/vjavmahs1">
-
-                                                    <FontAwesomeIcon icon={faGithub} color="white" size="3x" />
+                                                    <FontAwesomeIcon className="icon" icon={faGithub} color="white" size="3x" />
                                                 </a>
                                             </li>
 
                                             <li className="list-inline-item">
                                                 <a target="_blank" href="https://www.linkedin.com/in/seungjin-kim-98b08217a/">
-                                                    <FontAwesomeIcon icon={faLinkedinIn} color="white" size="3x" />
+                                                    <FontAwesomeIcon className="icon" icon={faLinkedinIn} color="white" size="3x" />
                                                 </a>
                                             </li>
                                         </ul>

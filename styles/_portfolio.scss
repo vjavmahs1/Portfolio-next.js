@@ -19,12 +19,14 @@
             margin-bottom: 20px;
         
             &:hover {
-              cursor: pointer;
               transform: translateY(-5px);
             }
         
             &:hover .readMore:before {
               background: linear-gradient(to right, #ffffff 0%,#ffffff 100%);
+            }
+            .readMore a {
+              text-decoration: none;
             }
         
             &-header {

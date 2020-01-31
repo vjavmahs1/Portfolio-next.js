@@ -148,10 +148,11 @@
       transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s;
       margin-bottom: 20px; }
       .portfolio-page .card-container .portfolio-card:hover {
-        cursor: pointer;
         transform: translateY(-5px); }
       .portfolio-page .card-container .portfolio-card:hover .readMore:before {
         background: linear-gradient(to right, #ffffff 0%, #ffffff 100%); }
+      .portfolio-page .card-container .portfolio-card .readMore a {
+        text-decoration: none; }
       .portfolio-page .card-container .portfolio-card-header {
         padding: 3px;
         padding-right: 7px;
@@ -265,6 +266,8 @@ footer {
     margin-bottom: 0;
     text-align: center;
     color: white; }
+  footer .icon:hover, footer .icon:focus {
+    color: black; }
 
 html, body {
   font-family: 'Montserrat', 'Helvetica' !important;

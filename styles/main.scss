@@ -23,7 +23,13 @@
       text-align: center;
       color: white;
     }
+    .icon {
+      &:hover, &:focus {
+        color: black;
+      }
+    }
   }
+
 
 
 html, body {
