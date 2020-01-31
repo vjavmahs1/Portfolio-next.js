@@ -61,7 +61,7 @@ class Portfolios extends React.Component {
                             <p className="portfolio-card-city"> {portfolio.skills} </p>
 
                             <div className="readMore">
-                            <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} style={{backgroundColor:'#FFC72C', color: '#005587', fontWeight:'bold'}} >Github</Button> {' '}
+                            <Button onClick={() => Router.pushRoute(${portfolio.link})} style={{backgroundColor:'#FFC72C', color: '#005587', fontWeight:'bold'}} >Github</Button> {' '}
                             { isAuthenticated && isSiteOwner&&
                             <React.Fragment>
                             <Button onClick={() => Router.pushRoute(`/portfolio/${portfolio._id}/edit`)} color="warning">Edit</Button> {' '}
