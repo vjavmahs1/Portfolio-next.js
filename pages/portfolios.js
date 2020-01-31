@@ -54,7 +54,7 @@ class Portfolios extends React.Component {
             return (
                 <React.Fragment key={index}>
                     <Card className="portfolio-card">
-                        <CardHeader className="portfolio-card-header">{portfolio.title}</CardHeader>
+                        <CardHeader className="portfolio-card-header">{portfolio.category}</CardHeader>
                         <CardBody>
                             <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
                             <CardText className="portfolio-card-text">{portfolio.description}</CardText>

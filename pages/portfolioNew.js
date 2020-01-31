@@ -10,7 +10,7 @@ import {Row, Col} from 'reactstrap'
 import {createPortfolio} from '../actions'
 import {Router} from '../routes'
 
-const INITIAL_VALUES = { title: '', description: '' , skills: '', link: ''}
+const INITIAL_VALUES = { title: '', category: '', description: '' , skills: '', link: ''}
 
 
 class PortfolioNew extends React.Component {
