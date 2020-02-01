@@ -2,6 +2,8 @@
 
 Portfolio website implemented using Next.js, SCSS, Node.js, MongoDB.
 
+https://seungjin-portfolio.herokuapp.com/
+
 ## Development setup
 
 npm install
